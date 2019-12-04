@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#CF4542"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CF4542">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/patitas"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/bInicio"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="#F7C751"
+                android:fontFamily="@font/coustard_black"
+                android:text="Inicio"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#BC5E0A"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_marginTop="25dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/facebookPatitas"
+                    android:src="@drawable/face_png"
+                    android:layout_marginStart="40dp"
+                    android:scaleType="fitCenter"
+                    android:background="#CF4542"
+                    />
+
+                <ImageButton
+                    android:layout_marginTop="25dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/facebookPatitasTienda"
+                    android:src="@drawable/face_png"
+                    android:scaleType="fitCenter"
+                    android:layout_marginStart="230dp"
+                    android:background="#CF4542"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        
+
+
+
+    </ScrollView>
+
+
+</LinearLayout>
