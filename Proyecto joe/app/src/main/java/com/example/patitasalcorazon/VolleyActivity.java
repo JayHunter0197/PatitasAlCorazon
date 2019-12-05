@@ -40,7 +40,7 @@ public class VolleyActivity extends AppCompatActivity
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        String url = "http://10.25.246.43:8000";
+        String url = "http://10.25.247.97:8000";
 
         final ProductTask productTask = new ProductTask(getApplicationContext(), null);
 
