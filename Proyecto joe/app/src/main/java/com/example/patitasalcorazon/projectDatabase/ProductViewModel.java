@@ -42,7 +42,6 @@ public class ProductViewModel extends ViewModel
         {
             products= db.productDao().getAll();
         }
-
         // busca el nombre de un producto en especifico
         else
         {
