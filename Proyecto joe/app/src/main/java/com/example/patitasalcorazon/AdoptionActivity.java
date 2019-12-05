@@ -40,7 +40,6 @@ public class AdoptionActivity extends AppCompatActivity implements AdoptionRecei
     public void doAction(View view)
     {
         String src = "%"+((EditText)findViewById(R.id.searchText)).getText()+"%";
-        System.out.println("ME VALE "+src);
         adoptions.searchAdoptions(getApplicationContext(),src).observe(this,
                 new Observer<List<Adoption>>() {
                     @Override

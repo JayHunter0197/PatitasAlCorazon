@@ -22,7 +22,7 @@ public class Adoption {
     public String image;
 
     @ColumnInfo(name="edad")
-    public int edad;
+    public String edad;
 
     @ColumnInfo(name="tamano")
     public String tamano;

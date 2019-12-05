@@ -15,7 +15,7 @@ public interface AdoptionDao
     public long[] insertAdoption(Adoption... adoptions);
 
     @Query("UPDATE adoption SET name=:nom, historia=:hist, image=:img, edad=:age, tamano=:size, temperamento=:temp WHERE aID=:id")
-    public void updateProducts(String id, String nom, String hist, String img, int age, String size, int temp);
+    public void updateProducts(String id, String nom, String hist, String img, String age, String size, int temp);
 
 
     @Query("SELECT * FROM adoption")

@@ -36,7 +36,6 @@ public class AdoptionCatalogueAdapter extends RecyclerView.Adapter
             Picasso.get()
                     .load(a.image)
                     .into(aHolder.recyclerImage);
-            aHolder.recyclerRating.setText("$"+a.temperamento);
 
         }else{
             aHolder.productName.setText("NONE");
@@ -55,7 +54,6 @@ public class AdoptionCatalogueAdapter extends RecyclerView.Adapter
     {
         private TextView productName;
         private ImageView recyclerImage;
-        private TextView recyclerRating;
 
         public int index;
 
@@ -64,7 +62,6 @@ public class AdoptionCatalogueAdapter extends RecyclerView.Adapter
             super(itemView);
             productName = itemView.findViewById(R.id.recyclerProductNameA);
             recyclerImage = itemView.findViewById(R.id.recyclerImageA);
-            recyclerRating = itemView.findViewById(R.id.recyclerRatingA);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override

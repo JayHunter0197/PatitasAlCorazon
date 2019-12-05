@@ -30,6 +30,7 @@ public class VolleyActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volley);
 
+        getDataAdoption();
         getData();
 
     }
@@ -56,7 +57,7 @@ public class VolleyActivity extends AppCompatActivity
                         try
                         {
                             // seleccionar el catalogo del que se va a obtener info
-                            JSONArray jsonArray = response.getJSONArray("empresas");
+                            JSONArray jsonArray = response.getJSONArray("productos");
 
                             Product[] products = new Product[jsonArray.length()];
 
@@ -68,15 +69,16 @@ public class VolleyActivity extends AppCompatActivity
                                 String nombre = e.getString("nombre");
                                 String descripcion = e.getString("descripcion");
                                 String imagen = e.getString("imagen");
+                                String precio= e.getString("precio");
 
                                 Product pro = new Product();
                                 pro.pID = id;
                                 pro.name = nombre;
                                 pro.description = descripcion;
                                 pro.image = imagen;
-                                pro.price = 0;
+                                pro.price = precio;
 
-                                t.append(id+"\n"+nombre+"\n"+descripcion+"\n"+imagen+"\n\n");
+                                t.append(id+"\n"+nombre+"\n"+descripcion+"\n"+imagen+"\n"+precio+"\n\n");
 
                                 products[i] = pro;
                             }
@@ -115,7 +117,7 @@ public class VolleyActivity extends AppCompatActivity
                         try
                         {
                             // seleccionar el catalogo del que se va a obtener info
-                            JSONArray jsonArray = response.getJSONArray("empresas");
+                            JSONArray jsonArray = response.getJSONArray("adopciones");
 
                             Adoption[] adoptions = new Adoption[jsonArray.length()];
 
@@ -127,9 +129,10 @@ public class VolleyActivity extends AppCompatActivity
                                 String nombre = e.getString("nombre");
                                 String historia = e.getString("historia");
                                 String imagen = e.getString("imagen");
-                                int edad = e.getInt("edad");
+                                String edad = e.getString("edad");
                                 String tamano = e.getString("tamano");
 
+                                System.out.println(id+nombre+historia+imagen+edad+tamano);
 
                                 Adoption ado = new Adoption();
                                 ado.aID = id;

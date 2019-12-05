@@ -23,8 +23,7 @@ public class Product
     public String image;
 
     @ColumnInfo(name="price")
-    public int price;
-
+    public String price;
 
 
 

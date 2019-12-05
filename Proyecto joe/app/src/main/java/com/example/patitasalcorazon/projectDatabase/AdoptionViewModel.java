@@ -39,8 +39,9 @@ public class AdoptionViewModel extends ViewModel
                 "projectDB").build();
 
         // si no se recibio nada muestra todos los productos del catalogo
-        if(adoptionToSearch.isEmpty())
+        if(adoptionToSearch.isEmpty() || adoptionToSearch == "%%")
         {
+            System.out.println("GETTING ALL BITCHES");
             adoptions= db.adoptionDao().getAll();
         }
         // busca el nombre de un producto en especifico

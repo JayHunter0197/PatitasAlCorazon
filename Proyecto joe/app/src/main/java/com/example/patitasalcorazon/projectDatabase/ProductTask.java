@@ -35,7 +35,7 @@ public class ProductTask extends AsyncTask<Product, Void, List<Product>>
         {
             for(int i = 0; i< params.length; i++)
             {
-                db.productDao().updateProducts(params[i].pID, params[i].name, params[i].description, params[i].image);
+                db.productDao().updateProducts(params[i].pID, params[i].name, params[i].description, params[i].image, params[i].price);
             }
         }
         return null;

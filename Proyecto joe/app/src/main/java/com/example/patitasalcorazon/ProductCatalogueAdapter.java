@@ -35,7 +35,7 @@ public class ProductCatalogueAdapter extends RecyclerView.Adapter
             Picasso.get()
                     .load(p.image)
                     .into(pHolder.recyclerImage);
-            pHolder.recyclerRating.setText("$"+p.price);
+            pHolder.recyclerRating.setText(p.price);
 
         }else{
             pHolder.productName.setText("NONE");

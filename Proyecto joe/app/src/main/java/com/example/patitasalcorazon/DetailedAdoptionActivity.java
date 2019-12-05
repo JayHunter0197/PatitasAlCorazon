@@ -47,6 +47,7 @@ public class DetailedAdoptionActivity extends AppCompatActivity
         TextView descView = findViewById(R.id.businessDesc);
         descView.setText(desc);
 
+        /*
         TextView edadView =findViewById(R.id.businessAge);
         edadView.setText(edad);
 
@@ -56,6 +57,8 @@ public class DetailedAdoptionActivity extends AppCompatActivity
         TextView tempView = findViewById(R.id.businessTemp);
         tempView.setText(tempo);
 
+
+         */
     }
 
 }

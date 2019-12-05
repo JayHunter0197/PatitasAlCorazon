@@ -14,8 +14,8 @@ public interface ProductDao
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public long[] insertProduct(Product... products);
 
-    @Query("UPDATE product SET name=:nom, description=:desc, image=:img WHERE pID=:id")
-    public void updateProducts(String id, String nom, String desc, String img);
+    @Query("UPDATE product SET name=:nom, description=:desc, image=:img, price=:precio WHERE pID=:id")
+    public void updateProducts(String id, String nom, String desc, String img, String precio);
 
 
     @Query("SELECT * FROM product")

@@ -54,40 +54,28 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00FFFFFF"
-                        android:text="Historia"
+                        android:text="Descripcion"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textSize="18sp" />
 
-                    <TextView
-                        android:id="@+id/businessAge"
+                    <View
+                        android:id="@+id/divider5"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#00FFFFFF"
-                        android:text="Edad"
-                        android:textAlignment="center"
-                        android:textAllCaps="false"
-                        android:textSize="12sp" />
+                        android:layout_height="20dp"
+                        android:background="#00FFFFFF" />
 
                     <TextView
-                        android:id="@+id/businessSize"
+                        android:id="@+id/businessPrecio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00FFFFFF"
-                        android:text="Tamaño"
+                        android:text="Precio"
                         android:textAlignment="center"
                         android:textAllCaps="false"
-                        android:textSize="12sp" />
+                        android:textSize="26sp" />
 
-                    <TextView
-                        android:id="@+id/businessTemp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#00FFFFFF"
-                        android:text="Temperamento"
-                        android:textAlignment="center"
-                        android:textAllCaps="false"
-                        android:textSize="16sp" />
+
 
 
 

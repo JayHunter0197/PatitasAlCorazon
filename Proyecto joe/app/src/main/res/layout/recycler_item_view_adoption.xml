@@ -26,13 +26,7 @@
         android:textSize="24sp"
         android:textStyle="normal"></TextView>
 
-    <TextView
-        android:id="@+id/recyclerRatingA"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:text="3"
-        android:textSize="20dp" />
+ 
 
 
 </LinearLayout>
