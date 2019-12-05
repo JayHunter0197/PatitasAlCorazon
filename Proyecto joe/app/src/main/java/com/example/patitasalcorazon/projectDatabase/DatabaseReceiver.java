@@ -7,4 +7,5 @@ public interface DatabaseReceiver
 
     public void getAll(List<Product> products);
 
+
 }
