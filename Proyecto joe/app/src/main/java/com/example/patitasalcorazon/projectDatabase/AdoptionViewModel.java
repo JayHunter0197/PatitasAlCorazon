@@ -1,6 +1,7 @@
 package com.example.patitasalcorazon.projectDatabase;
 
 import android.content.Context;
+import android.view.View;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
@@ -9,7 +10,7 @@ import androidx.room.Room;
 
 import java.util.List;
 
-public class AdoptionViewModel
+public class AdoptionViewModel extends ViewModel
 {
     private LiveData<List<Adoption>> adoptions;
 

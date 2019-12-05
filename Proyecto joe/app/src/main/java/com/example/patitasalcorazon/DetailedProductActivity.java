@@ -21,15 +21,17 @@ public class DetailedProductActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_product);
 
-        fillScreenData();
+        //fillScreenData();
 
         products = ViewModelProviders.of(this).get(ProductViewModel.class);
     }
 
-    // recibir info del recyclerView para desplegarla
-    private void fillScreenData(){
+    /*
+    // recibir info del recyclerView para desplegarla // arreglar formato para desplegar
+    private void fillScreenData()
+    {
         final String name = getIntent().getExtras().getString("nombre");
-        String desc = getIntent().getExtras().getString("descripcion");
+        String hist = getIntent().getExtras().getString("historia");
         String img = getIntent().getExtras().getString("imagen");
         final String id = getIntent().getExtras().getString("id");
 
@@ -41,9 +43,9 @@ public class DetailedProductActivity extends AppCompatActivity
                 .into(logo);
 
         TextView descView = findViewById(R.id.businessDesc);
-        descView.setText(desc);
-
-
+        descView.setText(hist);
 
     }
+    */
+
 }

@@ -2,20 +2,16 @@ package com.example.patitasalcorazon;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
+
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
-
 
 import com.example.patitasalcorazon.projectDatabase.DatabaseReceiver;
 import com.example.patitasalcorazon.projectDatabase.Product;
@@ -56,7 +52,6 @@ public class ProductActivity extends AppCompatActivity implements DatabaseReceiv
                         adapter.setProducts(products);
                     }
                 });
-
 
     }
 

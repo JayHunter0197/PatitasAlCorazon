@@ -54,10 +54,42 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00FFFFFF"
-                        android:text="Descripcion"
+                        android:text="Historia"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/businessAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:text="Edad"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/businessSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:text="Tamaño"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/businessTemp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:text="Temperamento"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textSize="16sp" />
+
+
 
                 </LinearLayout>
             </ScrollView>
