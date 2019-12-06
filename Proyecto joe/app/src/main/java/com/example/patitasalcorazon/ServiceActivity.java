@@ -73,9 +73,9 @@ public class ServiceActivity extends AppCompatActivity implements ServiceReceive
                     public void onChanged(List<Service> services)
                     {
                         intent.putExtra("nombre",services.get(0).name);
-                        intent.putExtra("historia",services.get(0).description);
+                        intent.putExtra("descripcion",services.get(0).description);
                         intent.putExtra("imagen",services.get(0).image);
-                        intent.putExtra("edad",services.get(0).price);
+                        intent.putExtra("precio",services.get(0).price);
 
                         startActivity(intent);
 

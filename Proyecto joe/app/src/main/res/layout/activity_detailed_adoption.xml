@@ -56,7 +56,7 @@
                         android:layout_height="wrap_content"
                         android:background="#00FFFFFF"
                         android:text="Descripcion"
-                        android:textAlignment="center"
+                        android:textAlignment="viewStart"
                         android:textAllCaps="false"
                         android:textSize="18sp" />
 
