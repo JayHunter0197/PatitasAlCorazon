@@ -1,6 +1,9 @@
 package com.example.patitasalcorazon;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,11 +17,23 @@ public class DetailedAdoptionActivity extends AppCompatActivity
 {
     AdoptionViewModel adoptions;
 
+    private Button inicio;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_adoption);
+
+        inicio = findViewById(R.id.adoptarButton);
+        inicio.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                showMaps();
+            }
+        });
 
         fillScreenData();
 
@@ -50,17 +65,19 @@ public class DetailedAdoptionActivity extends AppCompatActivity
 
 
         TextView edadView =findViewById(R.id.businessAge);
-        edadView.setText(edad);
+        edadView.setText("Edad: "+edad);
 
         TextView sizeView = findViewById(R.id.businessSize);
-        sizeView.setText(tam);
-
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!"+histo);
-
-
-
-
+        sizeView.setText("Tamaño: "+tam);
 
     }
+
+    private void showMaps()
+    {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
+
+
 
 }

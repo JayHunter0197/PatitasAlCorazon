@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AboutActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <WebView
+                android:id="@+id/wv_main"
+                android:layout_width="412dp"
+                android:layout_height="342dp"
+                tools:layout_editor_absoluteX="-1dp"
+                tools:layout_editor_absoluteY="1dp" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Patitas Al Corazon"
+                android:textAlignment="center"
+                android:textSize="50sp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/wv_main"/>
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/info"
+                android:id="@+id/contact"
+                android:layout_marginLeft="10dp"
+                android:text="Conoce más sobre nosotros"
+                android:layout_marginTop="15dp"
+                android:textSize="28sp"
+                android:layout_centerHorizontal="true"/>
+
+            <ImageButton
+                android:layout_marginTop="25dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/facebookPatitas"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/face_png"
+                android:layout_marginStart="40dp"
+                android:scaleType="fitCenter"
+                android:background="#EEEEEE"
+                android:layout_below="@+id/contact"
+                />
+
+            <ImageButton
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/facebookPatitasTienda"
+                android:src="@drawable/face_png"
+                android:scaleType="fitCenter"
+                android:layout_marginStart="310dp"
+                android:background="#EEEEEE"
+                android:layout_below="@+id/contact"
+
+                />
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
