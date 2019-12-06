@@ -7,60 +7,47 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.patitasalcorazon.projectDatabase.AdoptionViewModel;
+import com.example.patitasalcorazon.projectDatabase.ServiceViewModel;
 import com.squareup.picasso.Picasso;
 
-public class DetailedAdoptionActivity extends AppCompatActivity
+public class DetailedServiceActivity extends AppCompatActivity
 {
-    AdoptionViewModel adoptions;
+    ServiceViewModel services;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailed_adoption);
+        setContentView(R.layout.activity_detailed_service);
 
         fillScreenData();
 
-        adoptions = ViewModelProviders.of(this).get(AdoptionViewModel.class);
+        services = ViewModelProviders.of(this).get(ServiceViewModel.class);
     }
 
-    // recibir info del recyclerView para desplegarla
+
+    // recibir info del recyclerView para desplegarla // arreglar formato para desplegar
     private void fillScreenData()
     {
         final String name = getIntent().getExtras().getString("nombre");
-        String histo = getIntent().getExtras().getString("historia");
+        String desc = getIntent().getExtras().getString("descripcion");
         String img = getIntent().getExtras().getString("imagen");
-        String edad = getIntent().getExtras().getString("edad");
-        String tam = getIntent().getExtras().getString("tamano");
-
-
+        String pre = getIntent().getExtras().getString("precio");
         final String id = getIntent().getExtras().getString("id");
 
         TextView nameView = findViewById(R.id.businessName);
         nameView.setText(name);
-
         ImageView logo = findViewById(R.id.logoView);
         Picasso.get()
                 .load(img)
                 .into(logo);
 
         TextView descView = findViewById(R.id.businessDesc);
-        descView.setText(histo);
+        descView.setText(desc);
 
-
-        TextView edadView =findViewById(R.id.businessAge);
-        edadView.setText(edad);
-
-        TextView sizeView = findViewById(R.id.businessSize);
-        sizeView.setText(tam);
-
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!"+histo);
-
-
-
-
-
+        TextView priceView  = findViewById(R.id.businessPrecio);
+        priceView.setText(pre);
     }
+
 
 }

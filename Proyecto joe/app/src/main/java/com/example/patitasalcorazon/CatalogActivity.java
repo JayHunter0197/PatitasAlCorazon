@@ -51,7 +51,7 @@ public class CatalogActivity extends AppCompatActivity
 
     private void goToServices()
     {
-        Intent intent = new Intent(this, VolleyActivity.class);
+        Intent intent = new Intent(this, ServiceActivity.class);
         startActivity(intent);
     }
 

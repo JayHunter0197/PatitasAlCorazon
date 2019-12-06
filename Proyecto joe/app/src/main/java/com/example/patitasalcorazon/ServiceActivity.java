@@ -1,38 +1,40 @@
 package com.example.patitasalcorazon;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-
 import com.example.patitasalcorazon.projectDatabase.Adoption;
 import com.example.patitasalcorazon.projectDatabase.AdoptionReceiver;
 import com.example.patitasalcorazon.projectDatabase.AdoptionViewModel;
-
+import com.example.patitasalcorazon.projectDatabase.Service;
+import com.example.patitasalcorazon.projectDatabase.ServiceReceiver;
+import com.example.patitasalcorazon.projectDatabase.ServiceViewModel;
 
 import java.util.List;
 
-public class AdoptionActivity extends AppCompatActivity implements AdoptionReceiver
+public class ServiceActivity extends AppCompatActivity implements ServiceReceiver
 {
-    AdoptionViewModel adoptions;
-    AdoptionCatalogueAdapter adapter;
+    ServiceViewModel services;
+    ServiceCatalogueAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adoption);
+        setContentView(R.layout.activity_service);
 
-        adoptions = ViewModelProviders.of(this).get(AdoptionViewModel.class);
+        services = ViewModelProviders.of(this).get(ServiceViewModel.class);
 
         RecyclerView recyclerView  = findViewById(R.id.recycler_view);
-        adapter = new AdoptionCatalogueAdapter(this);
+        adapter = new ServiceCatalogueAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -42,13 +44,15 @@ public class AdoptionActivity extends AppCompatActivity implements AdoptionRecei
     public void doAction(View view)
     {
         String src = "%"+((EditText)findViewById(R.id.searchText)).getText()+"%";
-        adoptions.searchAdoptions(getApplicationContext(),src).observe(this,
-                new Observer<List<Adoption>>() {
+        services.searchServices(getApplicationContext(),src).observe(this,
+                new Observer<List<Service>>() {
                     @Override
-                    public void onChanged(List<Adoption> adoptions)
+                    public void onChanged(List<Service> services)
                     {
-                        adapter.setAdoptions(adoptions);
+                        adapter.setServices(services);
                     }
+
+
                 });
 
     }
@@ -60,19 +64,18 @@ public class AdoptionActivity extends AppCompatActivity implements AdoptionRecei
     }
 
     public void sendToNextScreen(final String name) {
-        final Intent intent = new Intent(this, DetailedAdoptionActivity.class);
+        final Intent intent = new Intent(this, DetailedServiceActivity.class);
 
         // mandar informacion del recyclerView a la siguiente actividad
-        adoptions.searchAdoptions(getApplicationContext(),name).observe(this,
-                new Observer<List<Adoption>>() {
+        services.searchServices(getApplicationContext(),name).observe(this,
+                new Observer<List<Service>>() {
                     @Override
-                    public void onChanged(List<Adoption> adoptions)
+                    public void onChanged(List<Service> services)
                     {
-                        intent.putExtra("nombre",adoptions.get(0).name);
-                        intent.putExtra("historia",adoptions.get(0).historia);
-                        intent.putExtra("imagen",adoptions.get(0).image);
-                        intent.putExtra("edad",adoptions.get(0).edad);
-                        intent.putExtra("tamano",adoptions.get(0).tamano);
+                        intent.putExtra("nombre",services.get(0).name);
+                        intent.putExtra("historia",services.get(0).description);
+                        intent.putExtra("imagen",services.get(0).image);
+                        intent.putExtra("edad",services.get(0).price);
 
                         startActivity(intent);
 
@@ -84,7 +87,7 @@ public class AdoptionActivity extends AppCompatActivity implements AdoptionRecei
 
 
     @Override
-    public void getAllAdoptions(List<Adoption> adoptions) {
+    public void getAllServices(List<Service> services) {
 
     }
 }

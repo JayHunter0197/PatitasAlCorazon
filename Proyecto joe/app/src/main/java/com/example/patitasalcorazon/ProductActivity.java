@@ -37,6 +37,8 @@ public class ProductActivity extends AppCompatActivity implements DatabaseReceiv
         adapter = new ProductCatalogueAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        doAction(null);
     }
 
 

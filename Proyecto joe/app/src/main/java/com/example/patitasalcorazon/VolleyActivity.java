@@ -15,6 +15,8 @@ import com.example.patitasalcorazon.projectDatabase.Adoption;
 import com.example.patitasalcorazon.projectDatabase.AdoptionTask;
 import com.example.patitasalcorazon.projectDatabase.Product;
 import com.example.patitasalcorazon.projectDatabase.ProductTask;
+import com.example.patitasalcorazon.projectDatabase.Service;
+import com.example.patitasalcorazon.projectDatabase.ServiceTask;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,6 +34,7 @@ public class VolleyActivity extends AppCompatActivity
 
         getDataAdoption();
         getData();
+        getDataService();
 
     }
 
@@ -141,7 +144,7 @@ public class VolleyActivity extends AppCompatActivity
                                 ado.image = imagen;
                                 ado.edad = edad;
                                 ado.tamano = tamano;
-                                ado.temperamento=0;
+
 
                                 t.append(id+"\n"+nombre+"\n"+historia+"\n"+imagen+"\n"+edad+"\n"+tamano+"\n\n");
 
@@ -161,5 +164,71 @@ public class VolleyActivity extends AppCompatActivity
         });
 
         queue.add(request);
+
     }
+
+    // obtener info del Json
+    public void getDataService() {
+
+        final TextView t = findViewById(R.id.textView);
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        String url = "http://10.25.246.43:8000";
+
+        final ServiceTask serviceTask = new ServiceTask(getApplicationContext(), null);
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        try
+                        {
+                            // seleccionar el catalogo del que se va a obtener info
+                            JSONArray jsonArray = response.getJSONArray("servicios");
+
+                            Service[] services = new Service[jsonArray.length()];
+
+                            for (int i = 0; i < jsonArray.length(); i++) {
+
+                                JSONObject e = jsonArray.getJSONObject(i);
+
+                                String id = e.getString("id");
+                                String nombre = e.getString("nombre");
+                                String descripcion = e.getString("descripcion");
+                                String imagen = e.getString("imagen");
+                                String precio= e.getString("precio");
+
+                                Service ser = new Service();
+                                ser.sID = id;
+                                ser.name = nombre;
+                                ser.description = descripcion;
+                                ser.image = imagen;
+                                ser.price = precio;
+
+                                t.append(id+"\n"+nombre+"\n"+descripcion+"\n"+imagen+"\n"+precio+"\n\n");
+
+                                services[i] = ser;
+                            }
+                            serviceTask.execute(services);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        queue.add(request);
+    }
+
+
+
+
 }
